@@ -1,0 +1,7 @@
+name: TempleGenerationPlugin
+version: 1.0
+description: Thats a temple generation plugin for minecraft 1.8.8
+main: org.TempleGenerationPlugin
+commands:
+  gerartemplo:
+  temploloot:
