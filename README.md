@@ -1,4 +1,5 @@
 This is a minecraft plugin for version 1.8.8
+
 Its a simple plugin that allows you to generate a temple (schematic) with a countdown, when the countdown is over, drops a loot.If a player pickup the loot the temple will disappear.
 
 *What do you need?*
@@ -14,7 +15,7 @@ Its necessary have world edit on your server too, for saving schematics
 
 *How can i generate the temple schematic?*
 
-When this part is done, to generate the temple immediately type the command : /gerartemplo < name of schematic > < time to drop the loot >
+When this part is done, to generate the temple immediately type the command : /gerartemplo * name of schematic * * time to drop the loot *
 
 *How i can add loot to my temple?*
 
