@@ -42,20 +42,20 @@ public class TempleGenerator {
         this.worldName = worldName;
     }
 
-    public void generateTemple(int startTime) throws IOException {
+    public void generateTemple(int timeToDropLoot) throws IOException {
         SchematicGenerator generator = new SchematicGenerator(schematicPath, worldName);
 
         session = generator.generateSchematic();
         templeCuboid = generator.getCuboidFromSchematicInitSpawn(generator.getClipboardFromSchematicFile(), generator.getBlockVector());
         schematic = generator.getClipboardFromSchematicFile();
-        hologram = new CountdownHologram(worldName, plugin).showCountdown(templeCuboid.getCenter(), schematic.getRegion().getHeight(), startTime);
+        hologram = new CountdownHologram(worldName, plugin).showCountdown(templeCuboid.getCenter(), schematic.getRegion().getHeight(), timeToDropLoot);
 
         List<ItemStack> items = new TempleLoot(plugin).getItems();
         Bukkit.getScheduler().runTaskLater(plugin, () -> {
             if (!items.isEmpty()) {
                 spawnedItem = Bukkit.getWorld(worldName).dropItem(templeCuboid.getCenter(), items.get(new Random().nextInt(items.size())));
             }
-        }, 20L * startTime);
+        }, 20L * timeToDropLoot);
 
     }
 

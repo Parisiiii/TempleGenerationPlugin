@@ -27,11 +27,11 @@ public class GenerateTempleCommand implements CommandExecutor {
             if (player.hasPermission(player.getName())){
                 if(strings.length == 2){
                     String schematicPath = strings[0];
-                    int startTime = Integer.parseInt(strings[1]);
+                    int timeToDropLoot = Integer.parseInt(strings[1]);
                     if (!schematicPath.contains("schematic")) return false;
                     TempleGenerator templeGenerator = new TempleGenerator(schematicPath, plugin, player.getWorld().getName());
                     try {
-                        templeGenerator.generateTemple(startTime);
+                        templeGenerator.generateTemple(timeToDropLoot);
                         Bukkit.getPluginManager().registerEvents(new TempleLootPickupEvent(templeGenerator), plugin);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
